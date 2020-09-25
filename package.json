@@ -1,0 +1,30 @@
+{
+  "name": "unibo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js  NODE_ENV=default",
+    "test": "nodeapp.js  NODE_ENV=default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firekilin/Unibo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firekilin/Unibo/issues"
+  },
+  "homepage": "https://github.com/firekilin/Unibo#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "ejs": "^3.1.5",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "js-yaml": "^3.14.0",
+    "mysql": "^2.18.1",
+    "node-jieba": "0.0.3"
+  }
+}
