@@ -1,28 +1,32 @@
 
 #textBox {
   position: relative;
-  border: black 3px solid;
   margin: 5px;
   height: 500px;
   overflow-y: scroll;
+  width: calc(100% + 27px);
 }
 
 .other {
-  color:red;
+  color: rgb(25 5 5);
   float: left;
-  border: blue 3px solid;
-  padding: 5px;
+  max-width: 80%;
   position: relative;
-  width: max-content;
+  border-radius: 20px;
+  background: #ffeaef;
+  padding: 10px;
+  margin: 5px;
 }
 
 .us {
-  color:blue;
+  color: rgb(255 255 255);
   float: right;
-  width: max-content;
-  border: red 3px solid;
-  padding: 5px;
+  max-width: 80%;
   position: relative;
+  border-radius: 20px;
+  background: #ff8ea7;
+  padding: 10px;
+  margin: 5px;
 }
 
 .line {
@@ -31,3 +35,80 @@
   display: block;
   width: 100%;
 }
+
+.logoIcon {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.navbar {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.navbar-collapse {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+ul.navbar-nav {
+  width: 100%;
+  }
+
+li.nav-item {
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 16%;
+}
+
+ul.navbar-nav {
+  width: 100%;
+}
+.container {
+  max-width: 100%;
+  margin-top: 50px;
+}
+
+.middle-main {
+  overflow-x: hidden;
+  max-width: calc(50% - 27px);
+  margin-right: 27px;
+}
+
+.buttonList {
+  height: 100%;
+}
+
+.buttonList > div {
+  margin: 10%;
+  height: 20%;
+  width: 80%;
+  text-align: center;
+  line-height: 30px;
+  padding-top: calc(25% - 15px);
+  border-radius: 20px;
+}
+
+.myStuding {
+  background: aquamarine;
+}
+
+.myLearning {
+  background: gold;
+}
+
+.myLiving {
+  background: navajowhite;
+}
+
+.myEating {
+  background: sandybrown;
+}
+
+#message {border-top: none;border-bottom: red 3px solid;border-left: none;border-right: none;color: red;}

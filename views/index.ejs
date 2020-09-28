@@ -13,10 +13,70 @@
   <script src="public/js/index.js"></script>
 </head>
 <body>
-  <div class="textBox" id="textBox">
+    <nav class="header navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <a class="logoIcon" href="#">
+          <img src="public/img/logo.png" width="300" class="d-inline-block align-top"  alt="">
+        </a>
+      <div class="collapse navbar-collapse" id="navbarToggleExternalContent"> <!-- diff : .container寫在nav內 -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">產品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">商店</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">關於我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">使用說明</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">服務＆社群</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">顧客回饋</a>
+          </li>
+        </ul>
+      </div>
+      
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="left-main col-sm-3">
+          這裡放人物
+        </div>
+        <div class="middle-main col-sm-6">
+          <div class="textBox" id="textBox">
+          </div>
+          <input type="text" placeholder="(輸入問題)" id="message">
+          <button id="gogo">送出</button>
+        </div>
+        <div class="right-main col-sm-3">
+          <div class="buttonList">
+            <div class="myStuding">
+             學業
+            </div>
+            <div class="myLearning">
+              進修
+            </div>
+            <div class="myLiving">
+              住宿
+            </div>
+            <div class="myEating">
+              飲食
+            </div>
+          </div>
+            
+              
+        </div>
+      </div>
+     
+    </div>
 
-  </div>
-  <input type="text" id="message">
-  <button id="gogo">送出</button>
+
 </body>
 </html>
