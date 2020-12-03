@@ -1,13 +1,18 @@
 "use strict";
 
-var account=this.account?(()=>{throw new Error()})():{};
+var unibo=this.unibo?(()=>{throw new Error()})():{};
 $(() => {
   $("#gogo").click(() =>{
     $("#textBox").append("<div class='line'><div class='us'>"+$("#message").val()+"</div></div>");
     $.post("/api/getmessage", { 
       mess:$("#message").val(),
     }, (data, status) => {
-      $("#textBox").append("<div class='line'><div class='other'>"+data+"</div></div>");
+      for(let i=0;i<data.anser.length;i++){
+        $("#textBox").append("<div class='line'><div class='other'>"+data.anser[i].qs+"<br>"+data.anser[i].ans+"</div></div>");
+      }
+      $('#textBox').animate({ scrollTop:$('#textBox')[0].scrollHeight }, 800);
       });
+
   });
+
 });

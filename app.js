@@ -3,7 +3,7 @@ const port = config.get('app.port');
 const express = require('express');
 const app = express();
 const api = require('./routes/api');
-//const adm = require('./routes/adm');
+const adm = require('./routes/adm');
 const owner = require('./routes/owner');
 
 app.listen(port, function() {
@@ -14,7 +14,7 @@ app.listen(port, function() {
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use("/api", api);
-//app.use("/adm", adm);
+app.use("/adm", adm);
 app.use("/", owner);
 app.use( "/public",express.static('./public') );
 
