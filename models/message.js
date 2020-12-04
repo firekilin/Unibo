@@ -6,6 +6,7 @@ Jieba.load({dict: './models/dict.txt'});
 
 //取得問題並搜尋
 exports.getMessage =async (req, res) => {
+
   let cutList=[];
   let cutTogether="";
   let message = req.body.mess;
@@ -47,7 +48,7 @@ exports.getQA =async (req, res) => {
   let querypage = await query(`select idcomplent_message FROM complent_message` );
   let totalpage=0;
   totalpage=querypage.length;
-  let selectLimit = " limit " + ( pagelimit - 1) * 10 + ",10";
+  let selectLimit = " limit " + ( pagelimit - 1) * 25 + ",25";
   let qa = await query(`SELECT * FROM complent_message `+selectLimit);
   let qaList=[];
   for(let i=0;i<qa.length;i++){
