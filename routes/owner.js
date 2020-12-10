@@ -1,8 +1,10 @@
 const router = require('express').Router();
-var VSR = require('voice-speech-recognition');
-router.get('/index', function(req, res) {
-  res.render('index',{VSR:VSR});
-});
 
+router.get('/index', function(req, res) {
+  res.render('index');
+});
+router.get('/product', function(req, res) {
+  res.render('product');
+});
 
 module.exports = router;
