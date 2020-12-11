@@ -61,10 +61,10 @@ $(() => { //初始設定
            if(!qa.tableList.includes(subgrid_table_id)){
             qa.tableList.push(subgrid_table_id);
           }
-          qa.reSizejqGridWidth(qa.tableList);
+          
        },
        loadComplete: (e) => {  
-        
+        qa.reSizejqGridWidth(qa.tableList);
         $("#totalitem").text(e.totalpage); //設定切換頁面
         let pages=Math.floor(e.totalpage / 25)+1;
         $("#totalpage").text(pages);
@@ -116,8 +116,8 @@ $(() => { //初始設定
     {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true},
     
     );
+  
   }
-
 
 
 
@@ -135,9 +135,11 @@ $(() => { //初始設定
   
   }
 
-  qa.reSizejqGridWidth(qa.tableList);
+ 
 
   $(window).on("resize", ()=>{qa.reSizejqGridWidth(qa.tableList)});
 
   qa.newData(1);
+
+  qa.reSizejqGridWidth(qa.tableList);
 });
