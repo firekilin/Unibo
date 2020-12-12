@@ -22,7 +22,7 @@
         <div class="left-main col-sm-3">
           <div class="unibobox">
             <div class="unibo">
-              <img src="public/img/unibo/standard.gif" class="rounded mx-auto d-block" style="width: 100%;min-width:50vw ; position: absolute; left: -14vw;" alt="...">
+             <img src="public/img/unibo/standard.gif" class="rounded mx-auto d-block" style="width: 100%;min-width:50vw ; position: absolute; left: -14vw;" alt="...">
             </div>
         </div>
         
@@ -33,7 +33,7 @@
           </div>
           <input type="text" placeholder="(輸入問題)" id="message">
           <button id="gogo">送出</button>
-          <button id="listen" >聽</button>
+          <button id="listen" ontouchstart="$('#listen').mousedown();" ontouchend="$('#listen').mouseup();" >聽</button>
         </div>
         <div class="right-main col-sm-2">
           <div class="buttonList">

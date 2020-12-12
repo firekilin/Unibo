@@ -12,31 +12,34 @@ exports.getMessage =async (req, res) => {
   let message = req.body.mess;
 
   cutList=await Jieba.cutAll(message)
-    console.log(cutList);
-    for(let i=0;i<cutList.length;i++){
-      cutTogether+=i==0?"('"+cutList[i]+"'":",'"+cutList[i]+"'";
-    }
-    cutTogether+=")";
+  for(let i=0;i<cutList.length;i++){
+    cutTogether+=i==0?"('"+cutList[i]+"'":",'"+cutList[i]+"'";
+  }
+  cutTogether+=")";
+  let anser = [];
+  let qustion = [];
+  try{
     let data = await query(`SELECT count(complent)as keyword,complent,message,output_message 
-      FROM select_message,complent_message  
-      where idcomplent_message=complent and item in `+cutTogether+` 
-      group by complent 
-      order by keyword desc;`);
+    FROM select_message,complent_message  
+    where idcomplent_message=complent and item in `+cutTogether+` 
+    group by complent 
+    order by keyword desc;`);
     let ansmax=data[0].keyword;;
-    let anser = [];
-    let qustion = [];
+
     for (let i = 0; i < data.length; i++){
-     
+    
       if(data[i].keyword>=ansmax){
         let qs=data[i].message;
         let ans=data[i].output_message;
         anser.push({qs,ans});
       }else{
-         qustion.push(data[i].message);
-      }
-      
+        qustion.push(data[i].message);
+      }  
     }
-    res.send({anser,qustion});
+  }catch(e){
+    anser.push('null');
+  }
+  res.send({anser,qustion});
 
 
 
