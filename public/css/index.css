@@ -174,3 +174,16 @@ ul.navbar-nav {
   align-items: center;
   position: relative;
 }
+.questionitem {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  border: solid aliceblue;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#getquestion {
+  height: 60px;
+  overflow: scroll;
+}

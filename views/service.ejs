@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>unibo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <%- include('partial/header.ejs') %>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="public/img/slid1.png" class="d-block w-100" alt="unibo">
+        </div>
+
+      </div>
+    </div>
+    <div class="container">
+        <div class="firstcontent row">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-3">
+            <div class="card border-0">
+              <img src="public/img/service1.jpg" class="card-img-top rounded mx-auto d-block" style="width: 100%;" alt="...">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title">為什麼要用虛擬角色？</h5>
+                <p class="card-text">
+                  角色獨特性讓人們對此產生親近感，同時加深對品牌的印象，幫助品牌能在市場中快速站穩腳跟，確立形象地位。</br>* 右圖為台中國立公共資訊圖書館的虛擬導覽員
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-3">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title ">虛擬角色的好處？</h5>
+                <p class="card-text ">
+                  相對於聘請真人導覽員，他有固定的服務時間、地點。</br>而虛擬代言人不用擔心上述之缺點，反而在長期攤提下來的成本相對比較便宜。</br>* 左圖為日本神戶大學的語音校園導覽員
+                  </p>              
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card border-0">
+              <img src="public/img/service2.jpg" class="card-img-top rounded mx-auto d-block" style="width: 100%;" alt="...">
+            </div>
+          </div>
+          <div class="col-sm-3">
+          </div>
+        </div>
+    </div>
+<%- include('partial/footer.ejs') %>
+</body>
+</html>

@@ -6,5 +6,7 @@ router.get('/index', function(req, res) {
 router.get('/product', function(req, res) {
   res.render('product');
 });
-
+router.get('/service', function(req, res) {
+  res.render('service');
+});
 module.exports = router;

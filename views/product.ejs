@@ -34,19 +34,22 @@
           <input type="text" placeholder="(輸入問題)" id="message">
           <button id="gogo">送出</button>
           <button id="listen" ontouchstart="$('#listen').mousedown();" ontouchend="$('#listen').mouseup();" >聽</button>
+          <div id="getquestion" class="getquestion">
+          
+          </div>
         </div>
         <div class="right-main col-sm-2">
           <div class="buttonList">
-            <div class="myStuding">
+            <div class="myStuding" onclick="unibo.sendmsg('學業')" >
              學業
             </div>
-            <div class="myLearning">
+            <div class="myLearning"  onclick="unibo.sendmsg('進修')">
               進修
             </div>
-            <div class="myLiving">
+            <div class="myLiving"  onclick="unibo.sendmsg('住宿')">
               住宿
             </div>
-            <div class="myEating">
+            <div class="myEating"  onclick="unibo.sendmsg('飲食')">
               飲食
             </div>
           </div>

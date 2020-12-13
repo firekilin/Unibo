@@ -16,6 +16,13 @@ $(() => {
           }
          
         }
+        $('#getquestion').text("");
+        for(let i=0;i<data.qustion.length;i++){
+          if(data.qustion[i]!='null'){
+            $("#getquestion").append(`<div class='questionitem' onclick="unibo.sendmsg('`+data.qustion[i]+`')">`+data.qustion[i]+`</div>`)
+          }
+        }
+        
         $('#textBox').animate({ scrollTop:$('#textBox')[0].scrollHeight }, 800);
         });
     });
@@ -32,6 +39,13 @@ $(() => {
     unibo.stt.resetRecognition();
     $("#gogo").click();
   }
+  unibo.sendmsg=(msg)=>{
+    $("#message").val(msg);
+    $("#gogo").click();
+  }
+
+
+
   navigator.getUserMedia = ( navigator.getUserMedia ||
     navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia ||
