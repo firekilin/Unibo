@@ -10,8 +10,9 @@ exports.getMessage =async (req, res) => {
   let cutList=[];
   let cutTogether="";
   let message = req.body.mess;
+  
+  cutList=await Jieba.cutAll(message);
 
-  cutList=await Jieba.cutAll(message)
   for(let i=0;i<cutList.length;i++){
     cutTogether+=i==0?"('"+cutList[i]+"'":",'"+cutList[i]+"'";
   }
@@ -80,6 +81,7 @@ exports.getQAList =async (req, res) => {
   }
   return {rows:qaList};
 }
+
 exports.addQA = async (req, res) =>{
   let cutList = [];
   let cutTogether = "";

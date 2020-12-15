@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./public/js/index.js"></script>
 
 </head>
 <body>
@@ -22,7 +23,7 @@
 
       </div>
     </div>
-    <div class="container">
+    <div class="container-sm">
         <div class="firstcontent row">
           <div class="col-sm-4">
             <div class="card border-0">
@@ -83,6 +84,15 @@
             </div>            </div>
           </div>
         <div class="col-sm-1"></div>
+      </div>
+      <div class="feedback" >
+        <img src="public/img/feedback.png" class="card-img-top rounded mx-auto d-block">
+        <form class="feedback2" method="post" action="javascript:void(0);" enctype="text/plain">
+					<input type="text" name="name" placeholder="姓名">
+					<input type="text" name="title" placeholder="標題">
+					<textarea name="content" placeholder="意見"></textarea>
+					<input type="submit" onclick="unibo.feedback()">
+					</form>
       </div>
     </div>
 <%- include('partial/footer.ejs') %>

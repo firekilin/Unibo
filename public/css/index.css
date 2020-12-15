@@ -128,7 +128,6 @@ ul.navbar-nav {
 
 .footer{
   margin-top: 50px;
-  margin-bottom: 25px;
   padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
@@ -186,4 +185,75 @@ ul.navbar-nav {
 #getquestion {
   height: 60px;
   overflow: scroll;
+}
+.feedback{
+  position:relative;
+  left:-5%;
+}
+.feedback2 {
+  margin-left: 15%;
+  width: 80%;
+  display: inline-block;
+}
+
+input[name="name"] {
+  width: 25%;
+  margin: 2% 2% 2% 0px;
+  padding: 1%;
+  display: inline;
+  border-radius: 5px;
+  border: #8181813d solid 3px;
+  transition: all 0.6s ease;
+}
+
+input[name="title"] {
+  width: 100%;
+  padding: 1% 0px 1% 1%;
+  display: inline;
+  border-radius: 5px;
+  border: #8181813d solid 3px;
+  transition: all 0.6s ease;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: #8181813d solid 3px;
+  transition: all 0.6s ease;
+}
+
+input[name="name"]:focus {
+  border-color: #79abfe;
+}
+
+input[name="title"]:focus {
+  border-color: #79abfe;
+}
+
+textarea:focus {
+  border-color: #79abfe;
+}
+
+input[name="name"]:active {
+}
+
+input[type="submit"] {
+  width: 20%;
+  padding: 1%;
+  background-color: #797978;
+  border: #797978 solid 1px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bolder;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #50504f;
+}
+.container-sm{
+  margin-top: 50px;
 }
