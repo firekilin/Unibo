@@ -19,16 +19,15 @@ app.use("/", owner);
 app.use( "/public",express.static('./public') );
 app.use( "/.well-known/pki-validation/",express.static('./ssl') );
 
-app.all("*", (req, res, next) => {
-  let host = req.headers.host;
-  host = host.replace(/\:\d+$/, ''); // Remove port number
-  res.redirect(307, `https://${host}${req.path}`);
-});
 
-app.listen(port, function() {
-  console.log('Listen on port ' + port);
 
-});
+
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
+
 
 var privateKey  = fs.readFileSync(__dirname + '/ssl/private.key');
 var ca  = fs.readFileSync(__dirname + '/ssl/ca_bundle.crt');
