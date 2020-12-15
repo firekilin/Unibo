@@ -18,10 +18,12 @@ app.use("/adm", adm);
 app.use("/", owner);
 app.use( "/public",express.static('./public') );
 app.use( "/.well-known/pki-validation/",express.static('./ssl') );
+/*
 app.listen(port, function() {
   console.log('Listen on port ' + port);
 
 });
+*/
 var privateKey  = fs.readFileSync(__dirname + '/ssl/private.key');
 var ca  = fs.readFileSync(__dirname + '/ssl/ca_bundle.crt');
 var certificate = fs.readFileSync(__dirname + '/ssl/certificate.crt');
