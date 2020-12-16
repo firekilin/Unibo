@@ -19,20 +19,22 @@ exports.getMessage =async (req, res) => {
   cutTogether+=")";
   let anser = [];
   let qustion = [];
+  let uniboFace="";
   try{
-    let data = await query(`SELECT count(complent)as keyword,complent,message,output_message 
-    FROM select_message,complent_message  
-    where idcomplent_message=complent and item in `+cutTogether+` 
+    let data = await query(`SELECT count(complent)as keyword,complent,message,output_message,unibo_img 
+    FROM select_message,complent_message,unibo  
+    where idcomplent_message=complent and unibo_id=idunibo and item in `+cutTogether+` 
     group by complent 
     order by keyword desc;`);
     let ansmax=data[0].keyword;;
-
     for (let i = 0; i < data.length; i++){
     
       if(data[i].keyword>=ansmax){
         let qs=data[i].message;
         let ans=data[i].output_message;
         anser.push({qs,ans});
+        let boxImg=data[i].unibo_img;
+        uniboFace="data:image/gif;base64,"+Buffer.from(boxImg).toString('base64');
       }else{
         qustion.push(data[i].message);
       }  
@@ -40,7 +42,7 @@ exports.getMessage =async (req, res) => {
   }catch(e){
     anser.push('null');
   }
-  res.send({anser,qustion});
+  res.send({anser,qustion,uniboFace});
 
 
 
@@ -53,13 +55,14 @@ exports.getQA =async (req, res) => {
   let totalpage=0;
   totalpage=querypage.length;
   let selectLimit = " limit " + ( pagelimit - 1) * 25 + ",25";
-  let qa = await query(`SELECT * FROM complent_message `+selectLimit);
+  let qa = await query(`SELECT idcomplent_message,message,output_message,unibo_name FROM complent_message,unibo where idunibo=unibo_id `+selectLimit);
   let qaList=[];
   for(let i=0;i<qa.length;i++){
     let qaId=qa[i].idcomplent_message;
     let qaMessage=qa[i].message;
     let qaAnser=qa[i].output_message;
-    qaList.push({qaId,qaMessage,qaAnser});
+    let qaUnibo=qa[i].unibo_name;
+    qaList.push({qaId,qaMessage,qaAnser,qaUnibo});
   }
   return {rows:qaList,totalpage};
 }
@@ -87,6 +90,7 @@ exports.addQA = async (req, res) =>{
   let cutTogether = "";
   let message = req.body.qaMessage;
   let ans = req.body.qaAnser;
+
   let qaOper = req.body.oper;
   let qaId = "";
   try{

@@ -2,6 +2,18 @@
 'use strict';
 var qa=this.qa?(()=>{throw new Error()})():{};
 $(() => { //初始設定
+  qa.facelist="";
+  $.get("/api/getface", (data) => {
+    for(let i=0;i<data.length;i++){
+      if(i==0){
+        qa.facelist=data[i].id+":"+data[i].Name;
+      }else{
+        qa.facelist+=";"+data[i].id+":"+data[i].Name;
+      }
+      
+    }
+    qa.newData(1);
+  });
   qa.newData=(page)=>{
     let pagecheck=true;
     $("#qaList").GridUnload();
@@ -10,7 +22,7 @@ $(() => { //初始設定
       datatype: "json",
       
       mtype: 'post',
-      colNames:['id','問題', '答覆'],
+      colNames:['id','問題', '答覆','情緒'],
       colModel:[
         {name:'qaId',index:'qaId',edittype:'text',key: true},
         {name:'qaMessage',index:'qaName',editable:true,editoptions: { value: "是:否" }},
@@ -18,6 +30,8 @@ $(() => { //初始設定
           return data;
           
       }},
+      {name:'qaUnibo',index:'qaUnibo',editable:true,edittype:'select',editoptions:{ value: qa.facelist }
+      }
       ],
       rowNum:25,
       pager: '#qaPage',
@@ -139,7 +153,7 @@ $(() => { //初始設定
 
   $(window).on("resize", ()=>{qa.reSizejqGridWidth(qa.tableList)});
 
-  qa.newData(1);
+  
 
   qa.reSizejqGridWidth(qa.tableList);
 });

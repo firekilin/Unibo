@@ -7,6 +7,7 @@ $(() => {
       $.post("/api/getmessage", { 
         mess:$("#message").val(),
       }, (data, status) => {
+        $("#uniboface")[0].src=data.uniboFace;
         for(let i=0;i<data.anser.length;i++){
           if(data.anser[i]=='null'){
             let anns="https://www.dcard.tw/f/cycu<br>https://www.facebook.com/CYCU.PR/"
