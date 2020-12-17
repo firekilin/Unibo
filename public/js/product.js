@@ -22,7 +22,7 @@ $(() => {
             for(let i=0;i<ans.length;i++){
                 if(i==htmfirst){
                     urlsave+=ans[i];
-                    showans+="<a href='"+ans[i];
+                    showans+="<a style='word-break: break-all;' href='"+ans[i];
                 }else if(i>htmfirst&&i<htmend){
                     showans+=ans[i];
                     urlsave+=ans[i];
