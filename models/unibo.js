@@ -54,7 +54,7 @@ exports.uploadImgBoxs= async (req, res) => {
    //console.log(err.sqlMessage)
  }
  
-res.send({mes:"123"});
+return ({mes:"123"});
 
 }
 //取得情緒

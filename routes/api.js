@@ -39,8 +39,8 @@ router.post('/getImgBox', async(req, res) => {
 router.post('/addImgBox', async(req, res) => {
   uniboimg.uploadImgBox(req,res);
 });
-router.post('/uploadImgBox',upload.single('image'),(req, res) => {
-  uniboimg.uploadImgBoxs(req,res);
+router.post('/uploadImgBox',upload.single('image'),async (req, res) => {
+  res.send(await uniboimg.uploadImgBoxs(req,res)) ;
 });
 //取得情緒
 router.get('/getface',async(req, res) => {

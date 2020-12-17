@@ -90,13 +90,14 @@ exports.addQA = async (req, res) =>{
   let cutTogether = "";
   let message = req.body.qaMessage;
   let ans = req.body.qaAnser;
+  let unibo=req.body.qaUnibo;
 
   let qaOper = req.body.oper;
   let qaId = "";
   try{
     if (qaOper=="add"){
 
-      let data = await query(`INSERT INTO complent_message (message, output_message) VALUES ('`+message+`', '`+ans+`');  `);
+      let data = await query(`INSERT INTO complent_message (message, output_message,unibo_id) VALUES ('`+message+`', '`+ans+`','`+unibo+`');  `);
       qaId = data.insertId;
      
       cutList=await Jieba.cutAll(message);
@@ -110,7 +111,7 @@ exports.addQA = async (req, res) =>{
     }else if(qaOper=="edit"){
 
       qaId = req.body.id;
-      await query(`UPDATE complent_message SET message = '`+ message +`', output_message = '`+ ans +`' WHERE (idcomplent_message = '`+ qaId +`');    `);
+      await query(`UPDATE complent_message SET message = '`+ message +`', output_message = '`+ ans +`',unibo_id='`+unibo+`'  WHERE (idcomplent_message = '`+ qaId +`');    `);
     }else{
 
       qaId = req.body.id;
