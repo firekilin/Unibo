@@ -14,7 +14,28 @@ $(() => {
             $("#textBox").append("<div class='line'><img src='./public/img/unibo/cry_motion2.gif' class='round_icon cont2' ><div class='other'>查無資料<br>可以到相關網站進行詢問喔。<br>"+anns+"<br>也可以幫我們填寫回饋單使我們增加題庫</div></div>");
             $("#uniboface")[0].src="./public/img/unibo/cry.gif";
           }else{
-            $("#textBox").append("<div class='line'><img src='./public/img/unibo/standard2.gif' class='round_icon cont2' ><div class='other'>"+data.anser[i].qs+"<br>"+data.anser[i].ans+"</div></div>");
+            let ans=data.anser[i].ans;
+            let htmfirst=ans.indexOf("http");
+            let htmend=ans.indexOf("。",htmfirst);
+            let showans="";
+            let urlsave="";
+            for(let i=0;i<ans.length;i++){
+                if(i==htmfirst){
+                    urlsave+=ans[i];
+                    showans+="<a href='"+ans[i];
+                }else if(i>htmfirst&&i<htmend){
+                    showans+=ans[i];
+                    urlsave+=ans[i];
+                }else if(i==htmend){
+                    showans+="'>"+ urlsave +"</a>";
+                }else{
+                    showans+=ans[i];
+                }
+              
+            }
+       
+
+            $("#textBox").append("<div class='line'><img src='./public/img/unibo/standard2.gif' class='round_icon cont2' ><div class='other'>"+data.anser[i].qs+"<br>"+showans+"</div></div>");
             $("#uniboface")[0].src=data.uniboFace;
           }
          
