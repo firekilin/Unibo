@@ -31,9 +31,15 @@
         <div class="middle-main col-sm-6">
           <div class="textBox" id="textBox">
           </div>
-          <input type="text" placeholder="(輸入問題)" id="message">
-          <button id="gogo">送出</button>
-          <button id="listen" ontouchstart="$('#listen').mousedown();" ontouchend="$('#listen').mouseup();" >聽</button>
+          
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="(輸入問題)" id="message" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="gogo" type="button">送出</button>
+              <button class="btn btn-outline-secondary" id="listen" ontouchstart="$('#listen').mousedown();" ontouchend="$('#listen').mouseup();" type="button">按住發話</button>
+            </div>
+          </div>
+         
           <div id="getquestion" class="getquestion">
           
           </div>
