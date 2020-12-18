@@ -7,7 +7,7 @@ $(() => {
       $("#textBox").append("<div class='line'><img src='./public/img/users.png' class='round_icon cont' ><div class='us'>"+$("#message").val()+"</div></div>");
      
       $("#textBox").append("<div class='line' id='loading'><img src='./public/img/unibo/standard2.gif' class='round_icon cont2' ><div class='other dotloading'><span class='dot'></span><span class='dot'></span><span class='dot'></span></div></div>");
-      
+      $('#textBox').animate({ scrollTop:$('#textBox')[0].scrollHeight }, 800);
       $.post("/api/getmessage", { 
         mess:$("#message").val(),
       }, (data, status) => {
