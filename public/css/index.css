@@ -297,7 +297,7 @@ input[type="submit"]:hover {
   .buttonList > div {
     width: 100%;
     height: 14vh;
-    line-height: 10vh;
+    line-height: 9vh;
     font-size: 2vw;
   }
   #uniboface{
