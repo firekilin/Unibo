@@ -75,6 +75,7 @@ $(() => { //初始設定
            if(!qa.tableList.includes(subgrid_table_id)){
             qa.tableList.push(subgrid_table_id);
           }
+          qa.reSizejqGridWidth(qa.tableList);
           
        },
        loadComplete: (e) => {  
