@@ -221,7 +221,7 @@ ul.navbar-nav {
   cursor: pointer;
 }
 #getquestion {
-  height: 200px;
+  height: 100px;
   overflow: scroll;
 }
 .feedback{
@@ -296,7 +296,7 @@ input[type="submit"]:hover {
 @media (min-width: 576px){
   .buttonList > div {
     width: 100%;
-    height: 20%;
+    height: 14vh;
     line-height: 10vh;
     font-size: 2vw;
   }
