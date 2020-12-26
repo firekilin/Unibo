@@ -127,13 +127,18 @@ $(() => { //初始設定
     {edit:true,add:true,del:true,search:false,refresh:true,afterRefresh:()=>{
       qa.newData(page);
     }},
-    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true},
-    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true},
+    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true,beforeShowForm:setmoo},
+    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true,beforeShowForm:setmoo},
     
     );
   
   }
 
+  setmoo =($form)=> {
+    setTimeout(()=> {
+      new MooEditable('qaContent',{actions:'bold italic underline strikethrough | forecolor | formatBlock justifyleft justifyright justifycenter justifyfull | insertunorderedlist insertorderedlist indent outdent | undo redo | createlink unlink | urlimage | toggleview'});
+    },50);
+  }
 
 
 
