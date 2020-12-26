@@ -127,14 +127,14 @@ $(() => { //初始設定
     {edit:true,add:true,del:true,search:false,refresh:true,afterRefresh:()=>{
       qa.newData(page);
     }},
-    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true,beforeShowForm:setmoo},
-    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true,beforeShowForm:setmoo},
+    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true,beforeShowForm:qa.setmoo},
+    {width:650,reloadAfterSubmit:true,closeAfterEdit:true,closeAfterAdd:true,beforeShowForm:qa.setmoo},
     
     );
   
   }
 
-  setmoo =($form)=> {
+  qa.setmoo =($form)=> {
     setTimeout(()=> {
       new MooEditable('qaContent',{actions:'bold italic underline strikethrough | forecolor | formatBlock justifyleft justifyright justifycenter justifyfull | insertunorderedlist insertorderedlist indent outdent | undo redo | createlink unlink | urlimage | toggleview'});
     },50);
