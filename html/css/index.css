@@ -1,0 +1,177 @@
+
+
+@keyframes opens{
+  from{
+    height: 0px;
+    min-height:0px;
+  }
+  to{
+    height: 150px;
+    min-height:150px;
+  }
+}
+.content {
+  text-align: center;
+  border-top: white 1px solid;
+  border-bottom: white 1px solid;
+  margin-top: 20px;
+  min-height: 150px;
+  overflow: hidden;
+  animation-name:opens;
+  animation-duration:2s;
+}
+.background {
+  background: linear-gradient(to right, #ed8093 0%, #db3c78 50%, #9659d0 100%);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+}
+
+.container {
+  color: white;
+  padding-top: calc(50vh - 145px);
+}
+
+nav ul {
+  display: inline-flex;
+  list-style: none;
+  padding-left: 0;
+  border: solid 1px #ffffff;
+  border-radius: 4px;
+  margin-bottom: 0px;
+}
+
+.menu {
+  display: flex;
+  margin-top: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+nav ul li {
+  border-left: solid 1px #ffffff;
+}
+nav ul li a {
+  cursor: pointer;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 40px;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  color: white;
+}
+
+nav ul li a:hover {
+  line-height: 40px;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  color: white;
+  text-decoration: none;
+}
+nav ul li:first-child {
+  border-left: 0;
+}
+
+
+nav ul li:hover {
+  background-color: #adb5bd;
+}
+
+nav ul li:active {
+  background-color: rgba(255, 255, 255, 0.175);
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  border: white 0.5px solid;
+  margin: -40px;
+  height: 40px;
+}
+
+
+
+.content::before {
+  content: "";
+  margin-top: -20px;
+  height: 20px;
+  border: white 1px solid;
+  width: 1px;
+  position: absolute;
+}
+
+.bigmenu {
+  height: 40px;
+  line-height: 40px;
+}
+
+.card {
+  background: white;
+}
+
+.specal {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  margin-top: calc(50vh - 145px);
+  height: auto;
+}
+
+
+.secondcontent.row {
+  height: calc(50vh - 40px);
+}
+
+p.card-text.text-center {
+  color: black;
+}
+
+h5.card-title.text-center {
+  color: black;
+}
+
+.first .content::before {
+  content: "";
+  margin-top: calc(-50vh + 145px);
+  height: calc(50vh - 145px);
+  margin-left: calc(-10vw - 40px);
+}
+
+.first .content {
+  margin-top: calc(50vh - 145px);
+  min-height: 290px;
+}
+
+.specal::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: calc(50vh - 145px);
+  margin-top: calc(-50vh + 105px);
+  border: white 1px solid;
+}
+
+.edu {
+  margin-top: calc(50vh - 145px);
+  background: #00000082;
+  border-radius: 40px;
+  text-align: center;
+  border: white 5px solid;
+  padding: 20px;
+}
+
+.edu::before {
+  margin-top: calc(-50vh + 120px);
+  position: absolute;
+  width: 1px;
+  height: calc(50vh - 145px);
+  border: white 1px solid;
+  content:
+  "";
+  margin-left: calc(8vw + 20px);
+}
